@@ -6,6 +6,7 @@ from firebase_admin import credentials, auth, firestore
 import os
 import json
 
+
 app = Flask(__name__)
 app.secret_key = os.getenv("FLASK_SECRET_KEY")
 
