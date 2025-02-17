@@ -4,10 +4,7 @@ from if_else_conditions import recommendations
 import firebase_admin
 from firebase_admin import credentials, auth, firestore
 import os
-from dotenv import load_dotenv
 import json
-
-load_dotenv('keys.env')
 
 app = Flask(__name__)
 app.secret_key = os.getenv("FLASK_SECRET_KEY")
