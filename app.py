@@ -68,10 +68,14 @@ def main():
 
 @app.route('/aboutus')
 def aboutus():
+    if 'uid' not in session:
+        return redirect(url_for('login'))
     return render_template('abt2.html')
 
 @app.route('/diet')
 def diet():
+    if 'uid' not in session:
+        return redirect(url_for('login'))
     return render_template('diet.html')
 
 @app.route('/feedback',methods=['GET', 'POST'])
@@ -105,6 +109,8 @@ def feedback():
 
 @app.route('/predict',methods=['GET'])
 def predict():
+    if 'uid' not in session:
+        return redirect(url_for('login'))
     disease = request.args.get('disease')
     if not disease:
         return redirect(url_for('form'))
